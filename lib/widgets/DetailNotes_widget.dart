@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget detailNote() {
+Widget detailNotes() {
   return Container(
       color: Colors.red,
       child: Center(

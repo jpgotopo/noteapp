@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/models/user_model.dart';
-import 'package:notes_app/widgets/DetailNote_widget.dart';
+import 'package:notes_app/widgets/DetailNotes_widget.dart';
 import 'package:provider/provider.dart';
-import 'package:notes_app/widgets/MenuNote_widget.dart';
+import 'package:notes_app/widgets/MenuNotes_widget.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -12,9 +12,9 @@ class HomePage extends StatelessWidget {
         body: Container(
             padding: EdgeInsets.all(25),
             child: Row(children: [
-              Expanded(flex: 3, child: menuNote(context)),
+              Expanded(flex: 3, child: menuNotes(context)),
               Expanded(flex: 1, child: Container(color: Colors.transparent)),
-              Expanded(flex: 5, child: detailNote())
+              Expanded(flex: 5, child: detailNotes())
             ])));
   }
 
