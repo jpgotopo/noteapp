@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/pages/home_page.dart';
-import 'package:notes_app/pages/register_page.dart';
 import 'package:notes_app/widgets/customHyperLink_widget.dart';
 import 'package:provider/provider.dart';
 
+import 'controllers/note_controller.dart';
+import 'firebase/authentication_service.dart';
+import 'firebase/firestore_service.dart';
 import 'models/user_model.dart';
 
 void main() {
@@ -16,7 +18,16 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         //user provider
-        Provider<User>(create: (context) => new User())
+        Provider<User>(create: (context) => new User()),
+        //auth service
+        Provider<Authentication>(create:(context)=> new Authentication()),
+        // Firestore service
+        ProxyProvider<User, Firestore>(
+          update: (_, user, __)=> new Firestore(user),
+        ),
+        //note controller
+        ChangeNotifierProvider<NoteController>(create:(_)=> new NoteController())
+        
       ],
       child: MaterialApp(
         title: "Note App",
