@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/pages/home_page.dart';
 import 'package:notes_app/pages/register_page.dart';
 import 'package:notes_app/widgets/customHyperLink_widget.dart';
 import 'package:provider/provider.dart';
@@ -13,16 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers:[
+      providers: [
         //user provider
-        Provider<User>(
-          create:(context) => new User()
-        )
+        Provider<User>(create: (context) => new User())
       ],
       child: MaterialApp(
         title: "Note App",
         debugShowCheckedModeBanner: false,
-        home: RegisterPage(),
+        home: HomePage(),
       ),
     );
   }
