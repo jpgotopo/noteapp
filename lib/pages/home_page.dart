@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
         body: Container(
             padding: EdgeInsets.all(25),
             child: Row(children: [
-              Expanded(flex: 3, child: menuNote()),
+              Expanded(flex: 3, child: menuNote(context)),
               Expanded(flex: 1, child: Container(color: Colors.transparent)),
               Expanded(flex: 5, child: detailNote())
             ])));
